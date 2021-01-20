@@ -1,0 +1,813 @@
+/* Showing results for alquran.xlsx */
+
+/* CREATE TABLE */
+CREATE TABLE malquran(
+id DOUBLE,
+nama_surat VARCHAR(100),
+jumlah_ayat DOUBLE,
+column_3 VARCHAR(100),
+column_4 VARCHAR(100),
+column_5 VARCHAR(100),
+column_6 VARCHAR(100),
+column_7 VARCHAR(100),
+column_8 VARCHAR(100)
+);
+
+/* INSERT QUERY NO: 1 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+1, 'Al-Fatihah', 7
+);
+
+/* INSERT QUERY NO: 2 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+2, 'Al-Baqarah', 286
+);
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+3, 'Ali-Imran', 200
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+4, 'An-Nisa'', 176
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+5, 'Al-Maidah', 120
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+6, 'Al-Anam', 165
+);
+
+/* INSERT QUERY NO: 7 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+7, 'Al-Araf', 206
+);
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+8, 'Al-Anfal', 75
+);
+
+/* INSERT QUERY NO: 9 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+9, 'At-Taubah', 129
+);
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+10, 'Yunus', 109
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+11, 'Hud', 123
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+12, 'Yusuf', 111
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+13, 'Ar-Rad', 43
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+14, 'Ibrahim', 52
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+15, 'Al-Hijr', 99
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+16, 'An-Nahl', 128
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+17, 'Al-Isra', 111
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+18, 'Al-Kahf', 110
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+19, 'Maryam', 98
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+20, 'Ta-Ha', 135
+);
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+21, 'Al-Anbiya', 112
+);
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+22, 'Al-Hajj', 78
+);
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+23, 'Al-Muminun', 118
+);
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+24, 'An-Nur', 64
+);
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+25, 'Al-Furqan', 77
+);
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+26, 'Asy-Syuara'', 227
+);
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+27, 'An-Naml', 93
+);
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+28, 'AL-Qasas', 88
+);
+
+/* INSERT QUERY NO: 29 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+29, 'Al-Ankabut', 69
+);
+
+/* INSERT QUERY NO: 30 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+30, 'Ar-Rum', 60
+);
+
+/* INSERT QUERY NO: 31 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+31, 'Luqman', 34
+);
+
+/* INSERT QUERY NO: 32 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+32, 'As-Sajadah', 30
+);
+
+/* INSERT QUERY NO: 33 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+33, 'Al-Ahzab', 73
+);
+
+/* INSERT QUERY NO: 34 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+34, 'Saba', 54
+);
+
+/* INSERT QUERY NO: 35 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+35, 'Fatir', 45
+);
+
+/* INSERT QUERY NO: 36 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+36, 'Ya-Sin', 83
+);
+
+/* INSERT QUERY NO: 37 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+37, 'As-Saffat', 182
+);
+
+/* INSERT QUERY NO: 38 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+38, 'Sad', 88
+);
+
+/* INSERT QUERY NO: 39 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+39, 'Az-Zumar', 75
+);
+
+/* INSERT QUERY NO: 40 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+40, 'Ghafir', 85
+);
+
+/* INSERT QUERY NO: 41 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+41, 'Fussilat', 54
+);
+
+/* INSERT QUERY NO: 42 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+42, 'Asy-Syura', 53
+);
+
+/* INSERT QUERY NO: 43 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+43, 'Az-Zukhruf', 89
+);
+
+/* INSERT QUERY NO: 44 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+44, 'Ad-Dukhan', 59
+);
+
+/* INSERT QUERY NO: 45 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+45, 'Al-Jasiyah', 37
+);
+
+/* INSERT QUERY NO: 46 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+46, 'Al-Ahqaf', 35
+);
+
+/* INSERT QUERY NO: 47 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+47, 'Muhammad', 38
+);
+
+/* INSERT QUERY NO: 48 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+48, 'Al-Fath', 29
+);
+
+/* INSERT QUERY NO: 49 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+49, 'Al-Hujuraat', 18
+);
+
+/* INSERT QUERY NO: 50 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+50, 'Qaf', 45
+);
+
+/* INSERT QUERY NO: 51 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+51, 'Az-Zariyat', 60
+);
+
+/* INSERT QUERY NO: 52 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+52, 'At-Tur', 49
+);
+
+/* INSERT QUERY NO: 53 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+53, 'An-Najm', 62
+);
+
+/* INSERT QUERY NO: 54 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+54, 'Al-Qamar', 55
+);
+
+/* INSERT QUERY NO: 55 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+55, 'Ar-Rahman', 78
+);
+
+/* INSERT QUERY NO: 56 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+56, 'Al-Waqi\'ah', 96
+);
+
+/* INSERT QUERY NO: 57 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+57, 'Al-Hadid', 29
+);
+
+/* INSERT QUERY NO: 58 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+58, 'Al-Mujadilah', 22
+);
+
+/* INSERT QUERY NO: 59 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+59, 'Al-Hasyr', 24
+);
+
+/* INSERT QUERY NO: 60 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+60, 'Al-Mumtahanah', 13
+);
+
+/* INSERT QUERY NO: 61 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+61, 'As-Saff', 14
+);
+
+/* INSERT QUERY NO: 62 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+62, 'Al-Jumuah', 11
+);
+
+/* INSERT QUERY NO: 63 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+63, 'Al-Munafiqun', 11
+);
+
+/* INSERT QUERY NO: 64 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+64, 'At-Taghabun', 18
+);
+
+/* INSERT QUERY NO: 65 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+65, 'At-Talaq', 12
+);
+
+/* INSERT QUERY NO: 66 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+66, 'At-Tahrim', 12
+);
+
+/* INSERT QUERY NO: 67 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+67, 'Al-Mulk', 30
+);
+
+/* INSERT QUERY NO: 68 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+68, 'Al-Qalam', 52
+);
+
+/* INSERT QUERY NO: 69 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+69, 'Al-Haqqah', 52
+);
+
+/* INSERT QUERY NO: 70 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+70, 'Al-Maarij', 44
+);
+
+/* INSERT QUERY NO: 71 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+71, 'Nuh', 28
+);
+
+/* INSERT QUERY NO: 72 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+72, 'Al-Jin', 28
+);
+
+/* INSERT QUERY NO: 73 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+73, 'Al-Muzzammil', 20
+);
+
+/* INSERT QUERY NO: 74 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+74, 'Al-Muddassir', 56
+);
+
+/* INSERT QUERY NO: 75 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+75, 'Al-Qiyamah', 40
+);
+
+/* INSERT QUERY NO: 76 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+76, 'Al-Insan', 31
+);
+
+/* INSERT QUERY NO: 77 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+77, 'Al-Mursalat', 50
+);
+
+/* INSERT QUERY NO: 78 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+78, 'An-Naba', 40
+);
+
+/* INSERT QUERY NO: 79 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+79, 'An-Naziat', 46
+);
+
+/* INSERT QUERY NO: 80 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+80, 'Abasa', 42
+);
+
+/* INSERT QUERY NO: 81 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+81, 'At-Taqwir', 29
+);
+
+/* INSERT QUERY NO: 82 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+82, 'Al-Infitor', 19
+);
+
+/* INSERT QUERY NO: 83 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+83, 'Al-Muthaffifin', 36
+);
+
+/* INSERT QUERY NO: 84 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+84, 'Al-Insyiqaq', 25
+);
+
+/* INSERT QUERY NO: 85 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+85, 'Al-Buruj', 22
+);
+
+/* INSERT QUERY NO: 86 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+86, 'At-Tariq', 17
+);
+
+/* INSERT QUERY NO: 87 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+87, 'Al-Ala', 19
+);
+
+/* INSERT QUERY NO: 88 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+88, 'Al-Ghasyiyah', 26
+);
+
+/* INSERT QUERY NO: 89 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+89, 'Al-Fajr', 30
+);
+
+/* INSERT QUERY NO: 90 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+90, 'Al-Balad', 20
+);
+
+/* INSERT QUERY NO: 91 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+91, 'Asy-Syams', 15
+);
+
+/* INSERT QUERY NO: 92 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+92, 'Al-Lail', 21
+);
+
+/* INSERT QUERY NO: 93 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+93, 'Ad-Duha', 11
+);
+
+/* INSERT QUERY NO: 94 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+94, 'Al-Insyirah', 8
+);
+
+/* INSERT QUERY NO: 95 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+95, 'At-Tin', 8
+);
+
+/* INSERT QUERY NO: 96 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+96, 'Al-Alaq', 19
+);
+
+/* INSERT QUERY NO: 97 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+97, 'Al-Qadr', 5
+);
+
+/* INSERT QUERY NO: 98 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+98, 'Al-Bayyinah', 8
+);
+
+/* INSERT QUERY NO: 99 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+99, 'Az-Zalzalah', 8
+);
+
+/* INSERT QUERY NO: 100 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+100, 'Al-Adiyat', 11
+);
+
+/* INSERT QUERY NO: 101 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+101, 'Al-Qariah', 11
+);
+
+/* INSERT QUERY NO: 102 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+102, 'At-Takasur', 8
+);
+
+/* INSERT QUERY NO: 103 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+103, 'Al-Asr', 3
+);
+
+/* INSERT QUERY NO: 104 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+104, 'Al-Humazah', 9
+);
+
+/* INSERT QUERY NO: 105 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+105, 'Al-Fiil', 5
+);
+
+/* INSERT QUERY NO: 106 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+106, 'Quraisy', 4
+);
+
+/* INSERT QUERY NO: 107 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+107, 'Al-Maun', 7
+);
+
+/* INSERT QUERY NO: 108 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+108, 'Al-Kausar', 3
+);
+
+/* INSERT QUERY NO: 109 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+109, 'Al-Kafirun', 6
+);
+
+/* INSERT QUERY NO: 110 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+110, 'An-Nasr', 3
+);
+
+/* INSERT QUERY NO: 111 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+111, 'Al-Lahab', 5
+);
+
+/* INSERT QUERY NO: 112 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+112, 'Al-Ikhlas', 4
+);
+
+/* INSERT QUERY NO: 113 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+113, 'Al-Falaq', 5
+);
+
+/* INSERT QUERY NO: 114 */
+INSERT INTO malquran(id, nama_surat, jumlah_ayat)
+VALUES
+(
+114, 'An-Nas', 6
+);
+

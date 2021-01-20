@@ -427,7 +427,6 @@ class MaintenanceController extends Controller
 
 
 
-
         $usermt = $usermt->where('masset.CabangID','=',$kodearea);
 
         $usersection = Session::get('userinfo')['section'];

@@ -64,16 +64,12 @@ class LoginController extends Controller {
 				$last_activity->save();
 
 				$info['id'] = $check->id;
-				$info['section'] = $check->section;
 				$info['username'] = $check->username;
 				$info['priv'] = $check->user_level;
 				$info['name'] = $check->name;
 				$info['email'] = $check->email;
-				$info['reldag'] = $check->reldag;
-				$info['tipe'] = $check->tipe;
-                $info['area'] = $check->area;
-                $info['supervisor'] = $check->supervisor;
-
+                $info['tipe'] = $check->tipe;
+                $info['kelompok'] = $check->kelompok;
 				$data['status'] = true;
 				$data['response']['data']['userinfo'] = $info;
 				$data['response']['message'] = 'Login success.';
@@ -86,15 +82,12 @@ class LoginController extends Controller {
 					$last_activity->save();
 
                     $info['id'] = $check->id;
-				    $info['section'] = $check->section;
 					$info['username'] = $check->username;
 					$info['priv'] = $check->user_level;
 					$info['name'] = $check->name;
 					$info['email'] = $check->email;
-					$info['reldag'] = $check->reldag;
+					$info['kelompok'] = $check->kelompok;
 					$info['tipe'] = $check->tipe;
-                    $info['area'] = $check->area;
-                    $info['supervisor'] = $check->supervisor;
 
 					$data['status'] = true;
 					$data['response']['data']['userinfo'] = $info;

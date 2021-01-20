@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Model\Kategori;
+use App\Model\Kelompok;
 use Illuminate\Http\JsonResponse;
 use App\Model\UserLogin;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +26,7 @@ class UserLoginController extends Controller
     public function index()
     {
         //
-		return view ('backend.userlogin.index');
+        return view('backend.userlogin.index');
     }
 
     /**
@@ -35,9 +36,9 @@ class UserLoginController extends Controller
      */
     public function create()
     {
-        //
-        $kategoris = Kategori::select('id','category')->orderBy('id', 'ASC')->get();
-		return view ('backend.userlogin.update',compact('kategoris'));
+        $kelompoks = Kelompok::select('id', 'nama_kelompok')->where('active', 1)->orderBy('id', 'ASC')->get();
+        $kategoris = Kategori::select('id', 'category')->orderBy('id', 'ASC')->get();
+        return view('backend.userlogin.update', compact('kategoris','kelompoks'));
     }
 
     /**
@@ -48,78 +49,54 @@ class UserLoginController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[]);
+
+        $validator = Validator::make($request->all(), []);
         //
-        $cekusername = UserLogin::where('username',$request->username)->get()->count();
+        $cekusername = UserLogin::where('username', $request->username)->get()->count();
 
-        $ldapconn = ldap_connect('192.168.110.110');
-        ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
-        ldap_set_option($ldapconn, LDAP_OPT_REFERRALS, 0);
-
-        $searchUser = 'donny';
-        $searchPass = 'gogreenab';
-        $username = $request->username."@avianbrands.com";
-
-        $ldap_success = false;
-        if (@ldap_bind($ldapconn, $searchUser, $searchPass)) {
-            $attributes = ['cn'];
-            $filter = "(&(objectClass=user)(objectCategory=person)(userPrincipalName=".ldap_escape($username, null, LDAP_ESCAPE_FILTER)."))";
-            $baseDn = "DC=avianbrands,DC=com";
-            $results = @ldap_search($ldapconn, $baseDn, $filter, $attributes);
-            $info = @ldap_get_entries($ldapconn, $results);
-            $ldap_success = ($info && $info['count'] === 1);
-        }
-
-		if($cekusername > 0){
-			$validator->getMessageBag()->add('username', 'Username already registered');
+        if ($cekusername > 0) {
+            $validator->getMessageBag()->add('username', 'Username already registered');
         } else {
             if ($request->tipe == "AD") {
-                if (!$ldap_success){
+                if (!$ldap_success) {
                     $validator->getMessageBag()->add('username', 'Username not registered in the active directory');
                 } else {
                     $data = new UserLogin();
                     $data->username = $request->username;
-                    $data->reldag = $request->reldag;
+                    $data->password = md5('12345');
                     $data->tipe = $request->tipe;
                     $data->user_level = $request->user_level;
                     $data->name = $request->name;
                     $data->email = $request->email;
-                    $data->area = $request->cabang;
-                    $data->telp = $request->telp;
+                    $data->kelompok = ($request->kelompok);
                     //$data->kategori = $request->kategori;
-                    $data->section = $request->section;
-                    $data->jabatan = $request->jabatan;
-                    $data->supervisor = $request->supervisor;
+                    $data->telp = $request->telp;
                     $data->user_modified = Session::get('userinfo')['username'];
-                    if($data->save()){
+                    if ($data->save()) {
                         return Redirect::to('/backend/user/')->with('success', "Data saved successfully")->with('mode', 'success');
                     }
                 }
             } else
-            if ($request->tipe =="AGEN"){
+            if ($request->tipe == "AGEN") {
                 $data = new UserLogin();
                 $data->username = $request->username;
                 $data->password = md5('12345');
-                $data->reldag = $request->reldag;
                 $data->tipe = $request->tipe;
                 $data->user_level = $request->user_level;
                 $data->name = $request->name;
                 $data->email = $request->email;
+                $data->kelompok = ($request->kelompok);
                 //$data->kategori = $request->kategori;
-                $data->area = $request->cabang;
-                $data->section = $request->section;
                 $data->telp = $request->telp;
-                $data->jabatan = $request->jabatan;
-                $data->supervisor = $request->supervisor;
                 $data->user_modified = Session::get('userinfo')['username'];
-                if($data->save()){
+                if ($data->save()) {
                     return Redirect::to('/backend/user/')->with('success', "Data saved successfully")->with('mode', 'success');
                 }
             }
         }
-		return Redirect::to('/backend/user/create')
-				->withErrors($validator)
-				->withInput();
+        return Redirect::to('/backend/user/create')
+            ->withErrors($validator)
+            ->withInput();
     }
 
     /**
@@ -131,10 +108,10 @@ class UserLoginController extends Controller
     public function show($id)
     {
         //
-		$data = UserLogin::where('id', $id)->get();
-		if ($data->count() > 0){
-			return view ('backend.userlogin.view', ['data' => $data]);
-		}
+        $data = UserLogin::where('id', $id)->get();
+        if ($data->count() > 0) {
+            return view('backend.userlogin.view', ['data' => $data]);
+        }
     }
 
     /**
@@ -145,12 +122,13 @@ class UserLoginController extends Controller
      */
     public function edit($id)
     {
+        $kelompoks = Kelompok::select('id', 'nama_kelompok')->where('active', 1)->orderBy('id', 'ASC')->get();
+        $kategoris = Kategori::select('id', 'category')->orderBy('id', 'ASC')->get();
+        $data = UserLogin::where('id', $id)->get();
 
-        $kategoris = Kategori::select('id','category')->orderBy('id', 'ASC')->get();
-		$data = UserLogin::where('id', $id)->get();
-		if ($data->count() > 0){
-			return view ('backend.userlogin.update', ['data' => $data], compact('kategoris'));
-		}
+        if ($data->count() > 0) {
+            return view('backend.userlogin.update', ['data' => $data], compact('kategoris','kelompoks'));
+        }
     }
 
     /**
@@ -163,33 +141,14 @@ class UserLoginController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $validator = Validator::make($request->all(),[]);
-        $cekusername = UserLogin::where('user_login.id','<>',$id)->where('username',$request->username)->get()->count();
+        $validator = Validator::make($request->all(), []);
+        $cekusername = UserLogin::where('user_login.id', '<>', $id)->where('username', $request->username)->get()->count();
 
-        $ldapconn = ldap_connect('192.168.110.110');
-        ldap_set_option($ldapconn, LDAP_OPT_PROTOCOL_VERSION, 3);
-        ldap_set_option($ldapconn, LDAP_OPT_REFERRALS, 0);
-
-        $searchUser = 'donny';
-        $searchPass = 'gogreenab';
-        $username = $request->username."@avianbrands.com";
-
-        $ldap_success = false;
-        if (@ldap_bind($ldapconn, $searchUser, $searchPass)) {
-            $attributes = ['cn'];
-            $filter = "(&(objectClass=user)(objectCategory=person)(userPrincipalName=".ldap_escape($username, null, LDAP_ESCAPE_FILTER)."))";
-            $baseDn = "DC=avianbrands,DC=com";
-            $results = @ldap_search($ldapconn, $baseDn, $filter, $attributes);
-            $info = @ldap_get_entries($ldapconn, $results);
-            $ldap_success = ($info && $info['count'] === 1);
-        }
-
-		if($cekusername > 0){
-			$validator->getMessageBag()->add('username', 'Username already registered');
-        } else
-        {
+        if ($cekusername > 0) {
+            $validator->getMessageBag()->add('username', 'Username already registered');
+        } else {
             if ($request->tipe == "AD") {
-                if (!$ldap_success){
+                if (!$ldap_success) {
                     $validator->getMessageBag()->add('username', 'Username not registered in the active directory');
                 } else {
                     $data = UserLogin::find($id);
@@ -198,15 +157,11 @@ class UserLoginController extends Controller
                     $data->tipe = $request->tipe;
                     $data->user_level = $request->user_level;
                     $data->name = $request->name;
+                    $data->kelompok = ($request->kelompok);
                     $data->email = $request->email;
-                    $data->area = $request->cabang;
-                    $data->kategori = $request->kategori;
-                    $data->section = $request->section;
                     $data->telp = $request->telp;
-                    $data->jabatan = $request->jabatan;
-                    $data->supervisor = $request->supervisor;
                     $data->user_modified = Session::get('userinfo')['username'];
-                    if($data->save()){
+                    if ($data->save()) {
                         return Redirect::to('/backend/user/')->with('success', "Data saved successfully")->with('mode', 'success');
                     }
                 }
@@ -214,30 +169,24 @@ class UserLoginController extends Controller
             if ($request->tipe == "AGEN") {
                 $data = UserLogin::find($id);
                 $data->username = $request->username;
-                if ($request->password_check == 1){
+                if ($request->password_check == 1) {
                     $data->password = md5($request->pwd);
                 }
-                $data->reldag = $request->reldag;
                 $data->tipe = $request->tipe;
                 $data->user_level = $request->user_level;
                 $data->name = $request->name;
+                $data->kelompok = ($request->kelompok);
                 $data->email = $request->email;
-                $data->area = $request->cabang;
                 $data->telp = $request->telp;
-                $data->kategori = $request->kategori;
-                $data->section = $request->section;
-                $data->jabatan = $request->jabatan;
-                $data->supervisor = $request->supervisor;
                 $data->user_modified = Session::get('userinfo')['username'];
-                if($data->save()){
+                if ($data->save()) {
                     return Redirect::to('/backend/user/')->with('success', "Data saved successfully")->with('mode', 'success');
                 }
-
             }
         }
-		return Redirect::to('/backend/user/'.$id."/edit")
-				->withErrors($validator)
-				->withInput();
+        return Redirect::to('/backend/user/' . $id . "/edit")
+            ->withErrors($validator)
+            ->withInput();
     }
 
     /**
@@ -250,33 +199,45 @@ class UserLoginController extends Controller
     {
         //
         $delete = UserLogin::where('id', $id)->delete();
-		return new JsonResponse(["status"=>true]);
+        return new JsonResponse(["status" => true]);
     }
 
-	public function datatable() {
-		$userticket = UserLogin::all();
+    public function datatable()
+    {
+        $userticket = UserLogin::all();
         return Datatables::of($userticket)
 
-            ->editColumn('user_level', function($userticket) {
-                if ($userticket->user_level == "VSUPER"){
+            ->editColumn('user_level', function ($userticket) {
+                if ($userticket->user_level == "VSUPER") {
                     return "SUPER ADMIN";
                 } else
-                if ($userticket->user_level == "VADM"){
+                if ($userticket->user_level == "VADM") {
                     return "ADMIN";
                 } else {
                     return $userticket->user_level;
                 }
             })
-			->addColumn('action', function ($userticket) {
-				$url_edit = url('backend/user/'.$userticket->id.'/edit');
-				$url = url('backend/user/'.$userticket->id);
-				$view = "<a class='btn-action btn btn-primary btn-view' href='".$url."' title='View'><i class='fa fa-eye'></i></a>";
-				$edit = "<a class='btn-action btn btn-info btn-edit' href='".$url_edit."' title='Edit'><i class='fa fa-edit'></i></a>";
-				$delete = "<button data-url='".$url."' onclick='deleteData(this)' class='btn-action btn btn-danger btn-delete' title='Delete'><i class='fa fa-trash-o'></i></button>";
-				return $view." ".$edit." ".$delete;
+            ->editColumn('kelompok', function($userticket){
+                $arrKelompok = [];
+                $tempKelompok = $userticket->{"kelompok"};
+
+                foreach($tempKelompok as $a){
+                    $cariKelompok = Kelompok::where('id',$a)->pluck('nama_kelompok')->first();
+                    array_push($arrKelompok, $cariKelompok);
+                }
+                $arrKelompok = join(",",$arrKelompok);
+
+                return $arrKelompok;
+            })
+            ->addColumn('action', function ($userticket) {
+                $url_edit = url('backend/user/' . $userticket->id . '/edit');
+                $url = url('backend/user/' . $userticket->id);
+                $view = "<a class='btn-action btn btn-primary btn-view' href='" . $url . "' title='View'><i class='fa fa-eye'></i></a>";
+                $edit = "<a class='btn-action btn btn-info btn-edit' href='" . $url_edit . "' title='Edit'><i class='fa fa-edit'></i></a>";
+                $delete = "<button data-url='" . $url . "' onclick='deleteData(this)' class='btn-action btn btn-danger btn-delete' title='Delete'><i class='fa fa-trash-o'></i></button>";
+                return $view . " " . $edit . " " . $delete;
             })
             ->rawColumns(['action'])
             ->make(true);
-	}
-
+    }
 }

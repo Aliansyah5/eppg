@@ -7,76 +7,66 @@
 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
     <div class="menu_section">
+        <h3>Data Master</h3>
         <ul class="nav side-menu">
+
             <li class="{{ ($segment == 'dashboard' ? 'active' : '') }}">
-                <a href="<?=url('backend/dashboard');?>"><i class="fa fa-dashboard"></i> Dashboard</a>
-            </li>
-        </ul>
-    </div>
-
-
-    <div class="menu_section">
-        <h3>MAINTENANCE</h3>
-        <ul class="nav side-menu">
-
-            <li>
-                <a href="<?=url('backend/maintenance');?>"><i class="fa fa-wrench"></i> Master Maintenance</a>
-            </li>
-            <li class="{{ ($segment == 'change-password' ? 'active' : '') }}">
-                <a href="<?=url('backend/change-password');?>"><i class="fa fa-ticket"></i> Change Password</a>
+                <a href="<?=url('backend/dashboard');?>"><i class="fa fa-bar-chart"></i> Dashboard </a>
             </li>
 
-            <li class="{{ ($segment == 'user-guide' ? 'active' : '') }}">
-                <a href="<?=url('backend/user-guide');?>" target="_blank"><i class="fa fa-question"></i> User Guide</a>
+            <li class="{{ ($segment == 'absensi' ? 'active' : '') }}">
+                <a href="<?=url('backend/absensi');?>"><i class="fa fa-users"></i> Absensi </a>
             </li>
 
-        </ul>
-    </div>
-
-
-    <div class="menu_section">
-        <h3>MASTER</h3>
-        <ul class="nav side-menu">
-            <?php
-    // SUPER ADMIN //
-    if ($userinfo['priv'] == "VSUPER"):
-    ?>
-            <li class="{{ ($segment == 'user' ? 'active' : '') }}">
-                <a href="<?=url('backend/user');?>"><i class="fa fa-user"></i> Master User</a>
-            </li>
-
-
-            <li>
-                <a href="<?=url('backend/kategori');?>"><i class="fa fa-folder"></i> Master Kategori Maintenance</a>
+            <li class="{{ ($segment == 'siswa' ? 'active' : '') }}">
+                <a href="<?=url('backend/siswa');?>"><i class="fa fa-user-plus"></i> Database Murid</a>
             </li>
             <?php
-    endif;
-    ?>
-            <li>
-                <a href="<?=url('backend/pic');?>"><i class="fa fa-users"></i> Master PIC</a>
-            </li>
-            <li>
-                <a href="<?=url('backend/asset');?>"><i class="fa fa-database"></i> Master Asset</a>
+            // SUPER ADMIN //
+            if ($userinfo['priv'] == "VSUPER"):
+            ?>
+            <li class="active"><a><i class="fa fa-database"></i>Data Master <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: block;">
+                    <li class="{{ ($segment == 'alquran' ? 'active' : '') }}">
+                        <a href="<?=url('backend/alquran');?>"> Master Al-Quran</a>
+                    </li>
+                    <li class="{{ ($segment == 'hadist' ? 'active' : '') }}">
+                        <a href="<?=url('backend/hadist');?>"> Master Al-Hadist</a>
+                    </li>
+                    <li class="{{ ($segment == 'kelompok' ? 'active' : '') }}">
+                        <a href="<?=url('backend/kelompok');?>"> Master Kelompok</a>
+                    </li>
+                    <li class="{{ ($segment == 'desa' ? 'active' : '') }}">
+                        <a href="<?=url('backend/desa');?>"> Master Desa</a>
+                    </li>
+                    <li class="{{ ($segment == 'pengajian' ? 'active' : '') }}">
+                        <a href="<?=url('backend/pengajian');?>"> Master Pengajian</a>
+                    </li>
+                    <li class="{{ ($segment == 'daerah' ? 'active' : '') }}">
+                        <a href="<?=url('backend/daerah');?>"> Master Daerah</a>
+                    </li>
+                    <li class="{{ ($segment == 'masjid' ? 'active' : '') }}">
+                        <a href="<?=url('backend/masjid');?>"> Master Masjid</a>
+                    </li>
+                    <li class="{{ ($segment == 'kategori' ? 'active' : '') }}">
+                        <a href="<?=url('backend/kategori');?>"> Master Kategori</a>
+                    </li>
+                    <li class="{{ ($segment == 'dapukan' ? 'active' : '') }}">
+                        <a href="<?=url('backend/dapukan');?>"> Master Dapukan</a>
+                    </li>
+                    <li class="{{ ($segment == 'user' ? 'active' : '') }}">
+                        <a href="<?=url('backend/user');?>"> Master User</a>
+                    </li>
+                    <li>
+                        <a href="<?=url('backend/pic');?>"> Master PIC</a>
+                    </li>
+
+                </ul>
             </li>
 
-
-            <li>
-                <a href="<?=url('backend/hourmeter');?>"><i class="fa fa-tachometer"></i> Master Hour Meter</a>
-            </li>
-
-        </ul>
-    </div>
-
-    <div class="menu_section">
-        <h3>Report</h3>
-        <ul class="nav side-menu">
-
-            <li>
-                <a href="<?=url('backend/general-report');?>"><i class="fa fa-file"></i> Report</a>
-            </li>
-            <li>
-                <a href="<?=url('reporting');?>"><i class="fa fa-bar-chart"></i> Report Forecast Biaya Maintenance</a>
-            </li>
+            <?php
+                endif;
+                ?>
 
         </ul>
     </div>

@@ -3,7 +3,14 @@
 	$breadcrumb[0]['title'] = 'Dashboard';
 	$breadcrumb[0]['url'] = url('backend/dashboard');
 	$breadcrumb[1]['title'] = 'User';
-	$breadcrumb[1]['url'] = url('backend/user');
+    $breadcrumb[1]['url'] = url('backend/user');
+    // $arr1 = array(1,4,5);
+    // $arr2 = array(1,2,3);
+    // $arr3 = array_diff($arr1, $arr2);
+    // dd(count($arr3));
+    // if (count($arr3) == 0) {
+    // // all of $arr1 is in $arr2
+    // }
 ?>
 
 <!-- LAYOUT -->
@@ -39,10 +46,8 @@
                                 <th>Level</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Area</th>
+                                <th>Kelompok</th>
                                 <th>Telp</th>
-                                <th>Section</th>
-                                <th>Supervisor</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
@@ -71,10 +76,8 @@
                 {data: 'user_level', name: 'user_level'},
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
-                {data: 'area', name: 'area'},
+                {data: 'kelompok', name: 'kelompok'},
                 {data: 'telp', name: 'telp'},
-                {data: 'section', name: 'section'},
-                {data: 'supervisor', name: 'supervisor'},
 				{data: 'action', name: 'action', orderable: false, searchable: false}
 			],
 			responsive: true,

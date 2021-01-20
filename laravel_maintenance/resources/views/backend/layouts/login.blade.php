@@ -8,8 +8,8 @@
 		<meta name="description" content="<?=getData('web_description');?>">
 		<meta name="author" content="ODWin">
 		<title><?=getData('web_title');?> | @yield('title')</title>
-		<link rel="apple-touch-icon" href="<?=url('img/avian.png');?>">
-		<link rel="shortcut icon" href="<?=url('img/avian.png');?>">
+		<link rel="apple-touch-icon" href="<?=url('img/ppg.png');?>">
+		<link rel="shortcut icon" href="<?=url('img/ppg.png');?>">
 		<!-- Ladda -->
 		<link rel="stylesheet" href="<?=url('vendors/ladda/ladda.min.css');?>">
 		<!-- Bootstrap -->
@@ -42,7 +42,7 @@
 					type: "POST",
 					url: url,
 					data: frm_data,
-					success: function(response){ 
+					success: function(response){
 						Ladda.stopAll();
 						if (response.status) {
 							window.location.href = "<?php echo url('/'); ?>/backend/dashboard";
@@ -53,13 +53,13 @@
 								$('.error-alert').append('<div class="alert alert-danger" role="alert"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>'+value+'</strong></div>');
 							});
 						}
-					}, 
+					},
 					error: function(response){
 						console.log(response);
 					}
 				});
 				return false;
 			});
-		</script>		
+		</script>
 	</body>
 </html>
