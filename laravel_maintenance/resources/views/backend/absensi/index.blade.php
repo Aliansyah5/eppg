@@ -177,8 +177,13 @@ $('#myDatepicker').datetimepicker({
 			serverSide: true,
             ajax: "<?=url('backend/absensi/datatable?tingkat='.$tingkat.'&pengajian='.$pengajian.'&kelas='.$kelas.'&kelompok='.$kelompok.'&startDate='.$startDate.'&mode='.$mode.'&endDate='.$endDate);?>",
 			columns: [
-				{data: 'id', name: 'id'},
-				{data: 'kehadiran', name: 'kehadiran'},
+				{
+                    "data": "id",
+                    render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
+				{data: 'kehadiran', name: 'kehadiran', searchable:false },
 				{data: 'tingkat', name: 'tingkat'},
                 {data: 'nama_pengajian', name: 'a.nama_pengajian'},
                 {data: 'tanggal', name: 'absensi.tgl'},

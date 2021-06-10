@@ -271,13 +271,25 @@ if (isset($data)) {
     <div class="form-group row">
         <label class="control-label col-md-3 col-sm-3 col-xs-6">Pengajar Al-Hadist</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <input type="text" name="pengajar_hadist" value="<?=$pengajar_hadist;?>" class="form-control" >
+            <select class=" form-control pengajar"   name="pengajar_hadist"  >
+                <option value="">(Pilih Pengajar)</option>
+                @foreach($pemateris as $pemateri)
+                <option value="{{$pemateri->id}}" {{ $pengajar_hadist == $pemateri->id ? 'selected' : '' }} >
+                    {{$pemateri->nama}}</option>
+                @endforeach
+            </select>
         </div>
     </div>
     <div class="form-group row">
         <label class="control-label col-md-3 col-sm-3 col-xs-6">Penasehat</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <input type="text" name="penasehat" value="<?=$penasehat;?>" class="form-control" >
+            <select class=" form-control pengajar"   name="penasehat"  >
+                <option value="">(Pilih Penasehat)</option>
+                @foreach($pemateris as $pemateri)
+                <option value="{{$pemateri->id}}" {{ $penasehat == $pemateri->id ? 'selected' : '' }} >
+                    {{$pemateri->nama}}</option>
+                @endforeach
+            </select>
         </div>
     </div>
     </br>

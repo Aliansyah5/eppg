@@ -101,6 +101,7 @@ class AbsensiController extends Controller
         $pemateris = Siswa::select('id','nama')->where('active',1)->where('id_dapukan',8)->orderBy('id','ASC')->get();
 
 
+
         return view('backend.absensi.update',
         compact('kategoris', 'kelompoks',
         'dapukans','pengajians','tempats','qurans','hadists','pemateris'));

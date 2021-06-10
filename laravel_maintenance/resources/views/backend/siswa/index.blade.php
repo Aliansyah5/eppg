@@ -157,13 +157,18 @@
 			serverSide: true,
             ajax: "<?=url('backend/siswa/datatable?jk='.$jk.'&kelas='.$kelas.'&kelompok='.$kelompok.'&startDate='.$startDate.'&mode='.$mode.'&endDate='.$endDate);?>",
 			columns: [
-				{data: 'id', name: 'id'},
+				{
+                    "data": "id",
+                    render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
                 {data: 'nama', name: 'nama'},
                 {data: 'tgl_lahir', name: 'tgl_lahir'},
                 {data: 'jk', name: 'jk'},
-                {data: 'kelas', name: 'kelas'},
-                {data: 'dapukan', name: 'dapukan'},
-                {data: 'kelompok', name: 'kelompok'},
+                {data: 'kelas', name: 'category.category'},
+                {data: 'dapukan', name: 'mdapukan.nama_dapukan'},
+                {data: 'kelompok', name: 'mkelompok.nama_kelompok'},
 				{data: 'action', name: 'action', orderable: false, searchable: false}
 			],
 			responsive: true,
