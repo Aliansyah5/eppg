@@ -114,20 +114,20 @@ if (isset($data)) {
             <br>
             <form class="form-horizontal form-label-left">
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama<span class="required">*</span></label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Nama<span class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
                         <input type="text" name="namasiswa" value="<?=$namasiswa;?>" id="nama" required="required" class="form-control ">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Tgl Lahir<span
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Tgl Lahir<span
                             class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
-                        <input type="date" name="tgl_lahir" value="<?=$tgl_lahir;?>"  required="required" class="form-control" autofocus>
+                        <input type="date" name="tgl_lahir" value="<?=$tgl_lahir;?>" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Jenis Kelamin<span
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Jenis Kelamin<span
                             class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-6"">
                     <div class=" radio">
@@ -144,7 +144,7 @@ if (isset($data)) {
         </div>
 
         <div class="form-group row">
-            <label class="control-label col-md-3 col-sm-3 col-xs-3">Kelas<span class="required">*</span></label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-6">Kelas<span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12"">
                         <select class=" form-control" name="kelas" required="">
                 <option value="">(Pilih Kelas)</option>
@@ -156,7 +156,7 @@ if (isset($data)) {
             </div>
         </div>
         <div class="form-group row">
-            <label class="control-label col-md-3 col-sm-3 col-xs-3">Status Perkawinan</label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-6">Status Perkawinan</label>
             <div class="col-md-6 col-sm-6 col-xs-12"">
                 <div class=" radio">
                 <label>
@@ -172,7 +172,7 @@ if (isset($data)) {
     </div>
 
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Kelompok</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Kelompok</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control" name="kelompok" required="">
                 <option value="">(Pilih Kelas)</option>
@@ -184,19 +184,19 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Alamat</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Alamat</label>
         <div class="col-md-6 col-sm-6 col-xs-12"">
                 <textarea id="message" class="form-control" name="alamatsiswa"><?=$alamatsiswa;?></textarea>
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Email</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Email</label>
         <div class="col-md-6 col-sm-6 col-xs-12"">
             <input type=" email" name="email" class="form-control" value="<?=$email;?>" autofocus>
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">No HP</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">No HP</label>
         <div class="col-md-6 col-sm-6 col-xs-12" ">
             <input class=" form-control" type="number" name="telpsiswa" value="<?=$telpsiswa;?>" data-validate-minmax="10,100" autofocus>
         </div>
@@ -209,25 +209,25 @@ if (isset($data)) {
     </div>
     <br>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Wali (Ayah/Ibu)</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Nama Wali (Ayah/Ibu)</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <input type=" text" id="first-name" name="namawali" value="<?=$namawali;?>" class="form-control ">
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Alamat</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Alamat</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <textarea id=" message" class="form-control" name="alamatwali" ><?=$alamatwali;?></textarea>
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">No HP</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">No HP</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <input class=" form-control" type="number" name="telpwali" value="<?=$telpwali;?>" data-validate-minmax="10,100" autofocus>
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Email</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Email</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <input type=" email" name="emailwali" class="form-control" value="<?=$emailwali;?>" autofocus>
         </div>
@@ -239,7 +239,7 @@ if (isset($data)) {
         <div class="clearfix"></div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Pendidikan<span class="required">*</span></label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Pendidikan<span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             {{
                 Form::select(
@@ -258,19 +258,19 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Nama Sekolah / Universitas</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Nama Sekolah / Universitas</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <input type=" text" id="first-name" name="namasekolah" value="<?=$namasekolah;?>" class="form-control ">
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Jurusan</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Jurusan</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <input type=" text" id="first-name" name="jurusan" value="<?=$jurusan;?>" class="form-control ">
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Dapukan</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Dapukan</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control" name="dapukan"  >
                 <option value="">(Pilih Dapukan)</option>

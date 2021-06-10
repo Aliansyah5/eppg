@@ -33,7 +33,7 @@
             <div class="x_content">
                 <form id="form-work" class="form-horizontal" role="form" autocomplete="off" method="GET">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-1 text-right" style="margin-top:7px;">
+                        <div class="col-xs-12 col-sm-1 text-left" style="margin-top:7px;">
                             Kelas
                         </div>
                         <div class="col-xs-12 col-sm-5">
@@ -47,7 +47,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-xs-12 col-sm-1 text-right" style="margin-top:7px;">
+                        <div class="col-xs-12 col-sm-1 text-left" style="margin-top:7px;">
                             Kelompok
                         </div>
                         <div class="col-xs-12 col-sm-5">
@@ -64,7 +64,7 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-1 text-right" style="margin-top:7px;">
+                        <div class="col-xs-12 col-sm-1 text-left" style="margin-top:7px;">
                             Jenis Kelamin
                         </div>
                         <div class="col-xs-12 col-sm-5">
@@ -167,6 +167,7 @@
 				{data: 'action', name: 'action', orderable: false, searchable: false}
 			],
 			responsive: true,
+            useState: true,
             order : [[ 0, "desc" ]]
 		});
 </script>

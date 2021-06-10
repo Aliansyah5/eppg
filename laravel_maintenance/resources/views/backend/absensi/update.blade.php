@@ -124,7 +124,7 @@ if (isset($data)) {
             <br>
             <form class="form-horizontal form-label-left">
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Pilih Pengajian<span class="required">*</span></label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Pilih Pengajian<span class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
                         <select class=" form-control" name="pengajian" required="">
                             <option value="">(Pilih Kelas)</option>
@@ -136,21 +136,21 @@ if (isset($data)) {
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Tgl<span
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Tgl<span
                             class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
                         <input type="date" name="tanggal" value="<?=$tgl;?>"  required="required" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Jam Mulai<span
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Jam Mulai<span
                             class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
                         <input type="time" name="jam_mulai" value="<?=$jam_mulai;?>"  required="required" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Jam Akhir<span
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Jam Akhir<span
                             class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
                         <input type="time" name="jam_akhir" value="<?=$jam_akhir;?>"  required="required" class="form-control" autofocus>
@@ -158,7 +158,7 @@ if (isset($data)) {
                 </div>
 
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Peserta<span class="required">*</span></label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Peserta<span class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12"">
                                 <select class="form-control" id="kelas" name="kelas[]" multiple="multiple" required="">
                         <option value="">(Pilih Peserta)</option>
@@ -170,7 +170,7 @@ if (isset($data)) {
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Tingkat Pengajian</label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-6">Tingkat Pengajian</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         {{
                             Form::select(
@@ -188,7 +188,7 @@ if (isset($data)) {
                 </div>
 
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Kelompok</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Kelompok</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control"  id="kelompok" name="kelompok[]" multiple="multiple" required="" >
                 <option value="">(Pilih Kelas)</option>
@@ -200,7 +200,7 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Tempat</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Tempat</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control select_2"  name="tempat" required="" >
                 <option value="">(Pilih Tempat)</option>
@@ -219,7 +219,7 @@ if (isset($data)) {
     </div>
     <br>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Al-Quran</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Al-Quran</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control select_2"  name="quran"  >
                 <option value="">(Pilih Surat)</option>
@@ -231,17 +231,17 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Ayat</label>
-        <div class="col-md-1 col-sm-1 col-xs-2">
+        <label class="control-label col-md-3 col-sm-3 col-xs-4">Ayat</label>
+        <div class="col-md-1 col-sm-1 col-xs-3">
             <input type="number" name="ayat_awal" value="<?=$ayat_awal;?>"  min="0" id="ayat_awal" class="form-control" width="300">
         </div>
         <label class="control-label col-md-1 col-sm-1 " style="text-align: center">s/d</label>
-        <div class="col-md-1 col-sm-1 col-xs-2">
+        <div class="col-md-1 col-sm-1 col-xs-3">
             <input type="number" name="ayat_akhir" value="<?=$ayat_akhir;?>"  min="0" id="ayat_akhir" class="form-control" width="300">
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Pengajar Al-Quran</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Pengajar Al-Quran</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control select_2"   name="pengajar_quran"  >
                 <option value="">(Pilih Pengajar)</option>
@@ -253,7 +253,7 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Al-Hadist</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Al-Hadist</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control select_2"  id="hadist" name="hadist"  >
                 <option value="">(Pilih Hadist)</option>
@@ -265,17 +265,17 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Halaman</label>
-        <div class="col-md-1 col-sm-1 col-xs-2">
+        <label class="control-label col-md-3 col-sm-3 col-xs-4">Halaman</label>
+        <div class="col-md-1 col-sm-1 col-xs-3">
             <input type="number" name="hal_awal" value="<?=$hal_awal;?>"  min="0" vaid="hal_awal" class="form-control" width="300">
         </div>
         <label class="control-label col-md-1 col-sm-1 " style="text-align: center">s/d</label>
-        <div class="col-md-1 col-sm-1 col-xs-2">
+        <div class="col-md-1 col-sm-1 col-xs-3">
             <input type="number" name="hal_akhir" value="<?=$hal_akhir;?>"  min="0" id="hal_akhir" class="form-control" width="300">
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Pengajar Al-Hadist</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Pengajar Al-Hadist</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control select_2"   name="pengajar_hadist"  >
                 <option value="">(Pilih Pengajar)</option>
@@ -287,7 +287,7 @@ if (isset($data)) {
         </div>
     </div>
     <div class="form-group row">
-        <label class="control-label col-md-3 col-sm-3 col-xs-3">Penasehat</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-6">Penasehat</label>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <select class=" form-control select_2"   name="penasehat"  >
                 <option value="">(Pilih Penasehat)</option>

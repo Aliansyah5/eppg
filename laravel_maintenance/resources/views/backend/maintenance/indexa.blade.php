@@ -31,7 +31,7 @@
 
                 <form id="form-work" class="form-horizontal" role="form" autocomplete="off" method="GET">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-1 text-right" style="margin-top:7px;">
+                        <div class="col-xs-12 col-sm-1 text-left" style="margin-top:7px;">
                             Status
                         </div>
                         <div class="col-xs-12 col-sm-5">
@@ -42,7 +42,7 @@
                                 <option value="3" @if($status==3) selected @endif>Maintenance Selesai</option>
                             </select>
                         </div>
-                        <div class="col-xs-12 col-sm-1 text-right" style="margin-top:7px;">
+                        <div class="col-xs-12 col-sm-1 text-left" style="margin-top:7px;">
                             Kategori
                         </div>
                         <div class="col-xs-12 col-sm-5">
