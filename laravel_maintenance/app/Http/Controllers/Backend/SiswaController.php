@@ -189,34 +189,34 @@ class SiswaController extends Controller
         $validator = Validator::make($request->all(), []);
         $ceksiswa = Siswa::where('msiswa.id', '<>', $id)->where('nama', $request->namasiswa)->get()->count();
 
-        if ($ceksiswa > 0) {
-            $validator->getMessageBag()->add('siswa', 'Siswa already registered');
-        } else {
-            $data = Siswa::find($id);
+        // if ($ceksiswa > 0) {
+        //     $validator->getMessageBag()->add('siswa', 'Siswa already registered');
+        // } else {
+        $data = Siswa::find($id);
 
-            $data->nama = $request->namasiswa;
-            $data->tgl_lahir = date('Y-m-d',strtotime($request->tgl_lahir));
-            $data->jk = $request->jeniskelamin;
-            $data->id_kategori = $request->kelas;
-            $data->status_nikah = $request->status;
-            $data->id_kelompok = $request->kelompok;
-            $data->alamat = $request->alamatsiswa;
-            $data->email = $request->email;
-            $data->telp_murid = $request->telpsiswa;
-            $data->walimurid = $request->namawali;
-            $data->email_wali = $request->emailwali;
-            $data->alamat_wali = $request->alamatwali;
-            $data->telp_wali =$request->telpwali;
-            $data->sekolah = $request->namasekolah;
-            $data->pendidikan =$request->pendidikan;
-            $data->jurusan =$request->jurusan;
-            $data->id_dapukan = $request->dapukan;
+        $data->nama = $request->namasiswa;
+        $data->tgl_lahir = date('Y-m-d',strtotime($request->tgl_lahir));
+        $data->jk = $request->jeniskelamin;
+        $data->id_kategori = $request->kelas;
+        $data->status_nikah = $request->status;
+        $data->id_kelompok = $request->kelompok;
+        $data->alamat = $request->alamatsiswa;
+        $data->email = $request->email;
+        $data->telp_murid = $request->telpsiswa;
+        $data->walimurid = $request->namawali;
+        $data->email_wali = $request->emailwali;
+        $data->alamat_wali = $request->alamatwali;
+        $data->telp_wali =$request->telpwali;
+        $data->sekolah = $request->namasekolah;
+        $data->pendidikan =$request->pendidikan;
+        $data->jurusan =$request->jurusan;
+        $data->id_dapukan = $request->dapukan;
 
-            $data->user_modified = Session::get('userinfo')['username'];
-            if ($data->save()) {
-                return Redirect::to('/backend/siswa/')->with('success', "Data saved successfully")->with('mode', 'success');
-            }
+        $data->user_modified = Session::get('userinfo')['username'];
+        if ($data->save()) {
+            return Redirect::to('/backend/siswa/')->with('success', "Data saved successfully")->with('mode', 'success');
         }
+        // }
         return Redirect::to('/backend/siswa/' . $id . "/edit")
             ->withErrors($validator)
             ->withInput();
