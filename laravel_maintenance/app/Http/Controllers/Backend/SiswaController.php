@@ -71,8 +71,11 @@ class SiswaController extends Controller
      */
     public function create()
     {
+        $kelompokUser = Session::get('userinfo')['kelompok'];
         $kategoris = Kategori::select('id', 'category')->where('active', 1)->orderBy('id', 'ASC')->get();
         $kelompoks = Kelompok::select('id', 'nama_kelompok')->where('active', 1)->orderBy('id', 'ASC')->get();
+        $kelompoks = $kelompoks->WhereIn('id',$kelompokUser);
+
         $dapukans = Dapukan::select('id', 'nama_dapukan')->where('active', 1)->orderBy('id', 'ASC')->get();
         return view('backend.siswa.update', compact('kategoris', 'kelompoks', 'dapukans'));
     }
@@ -163,11 +166,12 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kelompokUser = Session::get('userinfo')['kelompok'];
         $data = Siswa::where('id', $id)->get();
 
         $kategoris = Kategori::select('id', 'category')->where('active', 1)->orderBy('id', 'ASC')->get();
         $kelompoks = Kelompok::select('id', 'nama_kelompok')->where('active', 1)->orderBy('id', 'ASC')->get();
+        $kelompoks = $kelompoks->WhereIn('id',$kelompokUser);
         $dapukans = Dapukan::select('id', 'nama_dapukan')->where('active', 1)->orderBy('id', 'ASC')->get();
 
 

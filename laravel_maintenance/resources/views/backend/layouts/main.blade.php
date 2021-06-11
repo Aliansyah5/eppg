@@ -133,14 +133,6 @@
                                             Log Out</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <?php
-                                        $url = "http://".$_SERVER['HTTP_HOST'];
-                                    ?>
-                                <a href="<?=$url;?>">
-                                    <i class="fa fa-home"> Main Menu </i>
-                                </a>
-                            </li>
                         </ul>
                     </nav>
                 </div>

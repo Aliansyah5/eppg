@@ -89,9 +89,11 @@ class AbsensiController extends Controller
      */
     public function create()
     {
-
+        $kelompokUser = Session::get('userinfo')['kelompok'];
         $kategoris = Kategori::select('id', 'category')->where('active', 1)->orderBy('id', 'ASC')->get();
         $kelompoks = Kelompok::select('id', 'nama_kelompok')->where('active', 1)->orderBy('id', 'ASC')->get();
+        $kelompoks = $kelompoks->WhereIn('id',$kelompokUser);
+
         $dapukans = Dapukan::select('id', 'nama_dapukan')->where('active', 1)->orderBy('id', 'ASC')->get();
         $pengajians = Pengajian::select('id', 'nama_pengajian')->where('active', 1)->orderBy('id', 'ASC')->get();
         $tempats = Masjid::select('id', 'nama_masjid')->where('active', 1)->orderBy('id', 'ASC')->get();
@@ -179,9 +181,10 @@ class AbsensiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kelompokUser = Session::get('userinfo')['kelompok'];
         $kategoris = Kategori::select('id', 'category')->where('active', 1)->orderBy('id', 'ASC')->get();
         $kelompoks = Kelompok::select('id', 'nama_kelompok')->where('active', 1)->orderBy('id', 'ASC')->get();
+        $kelompoks = $kelompoks->WhereIn('id',$kelompokUser);
         $pemateris = Siswa::select('id','nama')->where('active',1)->where('id_dapukan',8)->orderBy('id','ASC')->get();
         $pengajians = Pengajian::select('id', 'nama_pengajian')->where('active', 1)->orderBy('id', 'ASC')->get();
         $tempats = Masjid::select('id', 'nama_masjid')->where('active', 1)->orderBy('id', 'ASC')->get();
@@ -189,8 +192,6 @@ class AbsensiController extends Controller
         $hadists = Mhadist::select('id', 'nama_hadist')->where('active', 1)->orderBy('id', 'ASC')->get();
 
         $data = Absensi::where('id', $id)->first();
-
-
 
         $carisiswa = Siswa::wherein('id_kelompok', $data->kelompok)
         ->wherein('id_kategori', $data->peserta)->get();
@@ -440,7 +441,11 @@ class AbsensiController extends Controller
                 $hadir = Dabsensi::where('id', $userticket->id)->where('status','H')->count();
                 $total = Dabsensi::where('id', $userticket->id)->count();
 
-                $pembulatan = ($hadir ?? 1/$total ?? 1)*100;
+                $hadir = ($hadir == 0) ? 1 : $hadir ;
+                $total = ($total == 0) ? 1 : $total ;
+
+                $pembulatan = ($hadir /$total )*100;
+                $pembulatan = round($pembulatan, 0);
 
                 $sukses = "<div class='progress'>
                 <div class='progress-bar bg-blue' role='progressbar' aria-valuenow='$pembulatan' aria-valuemin='0' aria-valuemax='100' style='width: $pembulatan%;color: white'>
@@ -602,7 +607,6 @@ class AbsensiController extends Controller
         ->where('dabsensi.id',$id)
         ->where('a.active', '>=', '1')
         ;
-
 
         return Datatables::of($userticket)
             ->editColumn('status', function($userticket) {

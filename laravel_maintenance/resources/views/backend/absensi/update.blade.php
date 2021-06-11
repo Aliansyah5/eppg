@@ -454,7 +454,8 @@ if (isset($data)) {
 				{data: 'status', name: 'dabsensi.status'},
 				{data: 'keterangan', name: 'dabsensi.keterangan'},
 			],
-			responsive: true,
+			responsive: false,
+            stateSave: true,
             order : [[ 0, "asc" ]],
 	});
 
@@ -468,7 +469,8 @@ if (isset($data)) {
 				{data: 'status', name: 'dabsensi.status'},
 				{data: 'keterangan', name: 'dabsensi.keterangan'},
 			],
-			responsive: true,
+			responsive: false,
+            stateSave: true,
             order : [[ 0, "asc" ]],
 	});
 
